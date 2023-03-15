@@ -1,0 +1,224 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{a4wide}
+\usepackage{graphicx}
+\usepackage[table]{xcolor}
+\usepackage{geometry}
+\graphicspath{{../includes/pics/}}
+\renewcommand{\familydefault}{\sfdefault}
+                   \usepackage{helvet}
+
+
+
+%TITOLO
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\thetitle}{Titolo}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%VERSIONE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\theversion}{ X.X.X }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%DATA
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\thedate}{ G Mese Anno }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%VERIFICATORI
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\verif}{Primo Verificatore, Secondo Verificatore}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%RESPONSABILE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\resp}{Unico Responsabile}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%DESCRIZIONE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\descript}{\input{../includes/description}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{ifthen}
+\usepackage{ifpdf}
+\ifpdf
+\usepackage[pdftex]{hyperref}
+\else
+\usepackage{hyperref}
+\fi
+\usepackage{color}
+\hypersetup{%
+colorlinks=true,
+linkcolor=black,
+citecolor=black,
+urlcolor=blue}
+\usepackage[nonumberlist]{glossaries}
+\usepackage{afterpage}
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
+\usepackage{subfig}
+\usepackage{tikz}
+\usepackage{tabularx}
+\usetikzlibrary{shapes,arrows}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\pgfplotsset{plot coordinates/math parser=false}
+\newlength\figureheight
+\newlength\figurewidth
+\pgfkeys{/pgf/number format/.cd,
+set decimal separator={,\!},
+1000 sep={\,},
+}
+\renewcommand{\baselinestretch}{1.05}
+
+
+\usepackage{amsthm}
+\usepackage{amssymb,amsmath}
+\usepackage{array}
+\usepackage{bm}
+\usepackage{multirow}
+\usepackage[footnote]{acronym}
+
+
+\newcommand\blankpage{%
+    \null
+    \newpage}
+
+\parskip=5pt
+
+\begin{document}
+%PRIMA PAGINA
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{titlepage}
+\begin{center}
+
+\includegraphics[width=0.4\textwidth]{logo.png}\\[1cm]
+
+{\large Storia della Tecnologia dell'Informazione \\ A.A. 2022/2023}\\[2cm]
+
+{ \huge \bfseries John von Neumann \\[1cm] } %TITOLO
+
+{\large Ivan Antonino Arena \\ Matricola N. 2000546} %BOTTOM
+\end{center}
+\end{titlepage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tableofcontents %crea indice
+\clearpage %pagina nuova
+
+\section{John von Neumann}
+
+\subsection{Introduzione}
+
+John von Neumann fu un matematico, fisico, informatico ed ingegnere di origini ungheresi, riconosciuto universalmente come uno dei più grandi scienzati di sempre, oltre che definito "\textit{l'ultimo rappresentante dei grandi matematici ugualmente bravi sia in matematica pura che in quella applicata}". Nella sua vita, von Neumann pubblicò oltre 150 articoli: 60 di matematica pura, 60 di matematica applicata, 20 in fisica ed il resto in branche varie della matematica o in materie non-matematiche.
+
+%% dire qualcosa di più sui computer
+
+\subsection{Infanzia e istruzione} % fare sempre una subsection per ogni roba
+% -contestualizzazione storica
+
+John von Neumann (conosciuto in terra natia con il nome completo Margittai Neumann János Lajos) nacque il 28 dicembre del 1903 a Budapest, in Ungheria, da una benestante famiglia ebrea. Il padre, Max von Neumann, era un banchiere di successo che fece la sua fortuna durante gli anni più prosperi dell'allora Impero Austro-Ungarico. Grazie a ciò, John von Neumann ricevette un'istruzione dapprima privata in inglese, francese, tedesco e italiano, poiché il padre riteneva che conoscere altre lingue oltre all'ungherese fosse essenziale. Nel 1914 entrò nel \textit{Fasori Evangélikus Gimnáziuma}, la facoltosa scuola superiore privata luterana di Budapest destinata all'élite: von Neumann, infatti, si rivelò fin dai primi anni della sua istruzione un bambino prodigio, avendo imparato a destreggiarsi nel calcolo differenziale ed integrale già dall'età di otto anni. 
+
+Il suo talento nella matematica fu subito riconosciuto dal suo professore, il celebre László Rátz, che richiese al padre il permesso di organizzare per il ragazzo delle lezioni private da parte di professori dell'Università di Budapest, contestualmente alle regolari lezioni scolastiche. Come conseguenza di ciò, von Neumann pubblicò il suo primo articolo scientifico - scritto in collaborazione con Margit Fekete, uno dei suoi insegnanti privati - subito dopo essersi diplomato dall'istituto, nel 1922 e vinse il premio Eötvös per la matematica.
+
+Nonostante il suo evidente talento matematico, sempre per volere del padre, il prodigioso ragazzo si iscrisse al corso di ingegneria chimica del Politecnico federale di Zurigo (\textit{Eidgenössische Technische Hochschule, ETH}), dopo essersi preparato per l'ammissione all'università Friedrich Wilhelm di Berlino, luogo in cui condusse, poi, gli studi in contemporanea con quelli del Politecnico, oltre che con quelli dell'università di Budapest. Von Neumann completò la sua educazione universitaria formale nel 1926, ricevendo la laurea in ingegneria chimica dall'ETH e il Ph.D. in matematica a Budapest.
+
+Successivamente, von Neumann andò all'Università di Göttingen, uno dei grandi centri di studio della matematica e della fisica teorica, per lavorare come assistente del matematico David Hilbert, grazie ad una borsa di studio offerta dalla Fondazione Rockfeller. Lì, ebbe modo di familiarizzare con gli ultimi sviluppi della meccanica quantistica, materia che rivoluzionerà grazie al suo fondamentale apporto.
+
+\subsection{Carriera}
+
+Nello stesso anno, il nostro matematico mandò la sua candidatura all'abilitazione all'università Friedrich Wilhelm di Berlino, a conseguenza della quale venne assunto per occupare un posto come \textit{Privatdozent} (lettore privato) a partire dal 1927, diventando, di fatto, il più giovane Privatdozent mai eletto nella storia dell'università in qualunque materia. 
+
+Nel 1929 von Neumann lasciò Berlino per recarsi ad Amburgo, dove occupò un altro posto come docente, per un breve periodo. Nel medesimo anno, difatti, fu invitato dall'Università di Princeton per un semestre, al termine del quale gli fu offerta una cattedra permanente, che il matematico, tuttavia, rifiutò.
+
+Nel 1933 gli fu offerto un professorato a vita dall'\textit{Institute for Advanced Study} di Princeton; prima di lui avevano accettato il medesimo incarico Albert Einstein, James W. Alexander e Oswald Veblen. Qui, rimase fino al sopraggiungere della sua morte, nel 1957, nonostante avesse precedentemente segnalato l'intenzione di dimettersi per andare ad insegnare all'Università della California a Los Angeles (\textit{UCLA}).
+
+\subsection{Vita privata}
+
+ Prima di partire per Princeton, il matematico si convertì al Cattolicesimo (come anche gli altri membri della sua famiglia, in seguito alla morte del padre Max nel 1929) e sposò Marietta Kövesi, conosciuta all'Università di Budapest, con la quale, nel marzo del 1935, diede alla luce la sua prima ed unica figlia, Marina von Neumann. Nel 1937 il primo matrimonio terminò con un divorzio ma, soltanto un anno dopo, von Neumann si risposò con Klara Dan, donna ungherese, anch'ella divorziata di recente, conosciuta durante i suoi ultimi viaggi a Budapest prima dello scoppio della Seconda Guerra Mondiale.
+
+\section{La Seconda Guerra Mondiale}
+
+\subsection{Contributi}
+
+Dalle lettere di von Neumann a Veblen ed Ortvay emerge che il matematico avesse presagito l'eventualità dello scoppio di una guerra ed avesse provato ad essere coinvolto fin da subito: dopo aver anglicizzato il proprio nome nella forma che oggi è nota ai più (e mantenendo, invece, il cognome nella forma tedesca) ed aver ottenuto la cittadinanza statunitense, infatti, von Neumann fece richiesta per diventare luogotenente della forza di riserva dell'Esercito degli Stati Uniti ma, nonostante avesse passato gli esami con facilità, venne respinto per via della sua età.
+
+I suoi contributi allo sforzo bellico, dunque, furono meramente scientifici, inizialmente sotto forma di consulenze: la sua prima posizione da consulente fu con il Laboratorio di Ricerca Balistica di Aberdeen (Maryland), dal 1937 in avanti. Da lì, von Neumann divenne sempre più coinvolto nella ricerca e lavorò sugli esplosivi veloci. Dal 1943 prese parte al Progetto Manhattan, sempre in veste di consulente scientifico.
+Tra i suoi contributi maggiori allo sviluppo della bomba atomica fu l'idea di impiegare il "metodo dell'implosione della lente", il quale serviva ad assemblare il materiale fissile al di sopra della massa critica comprimendolo con l'aiuto di esplosivi accuratamente posizionati; il matematico convinse il team del Progetto che tale metodo, se affinato abbastanza, avrebbe potuto funzionare.
+
+Tali servizi gli valsero la Medaglia al Merito nell'ottobre del 1946 e la Medaglia al Valore nel luglio dello stesso anno, oltre che la Medaglia alla Libertà in un successivo momento (1956).
+
+\section{Dopo la guerra}
+
+\subsection{Attività}
+
+Al termine della Seconda Guerra Mondiale, le attività di consulenza militare e governativa di von Neumann non si arrestarono: al contrario, aumentarono sia in volume che in importanza; i consigli del matematico, infatti, si estesero anche all'istruzione: fu lui, nel 1955, a suggerire che la neo-scienza dell'informatica sarebbe dovuta essere integrata nei dipartimenti di matematica, sottolineando lo stretto legame intercorrente tra queste due materie.
+
+Nel 1954 il presidente Eisenhower lo nominò Commissario dell'Energia Atomica, portandolo a trasferirsi a Washington, D.C.. Il mandato sarebbe durato fino al giugno del 1959 ma von Neumann aveva già altri piani e non voleva tornare all'IAS. Così, rifiutò anche un'ulteriore offerta dell'\textit{MIT} e nel marzo del 1956 accettò, invece, quella della UCLA, non riuscendo mai, tuttavia, a prendere effettivamente il posto, a causa della sopraggiunta malattia.
+
+\subsection{Malattia e morte}
+
+Nell'agosto del 1955 allo scienziato venne diagnosticato un cancro che lo costrinse dopo poco su una sedia a rotelle. Nell'aprile del 1956, John von Neumann venne ricoverato per l'ultima volta in ospedale; morì al \textit{Walter Reed Army Hospital} di Washington, D.C. l'8 febbraio del 1957 ed è tuttora seppellito al cimitero di Princeton.
+
+\section{Maggiori contributi}
+
+\subsection{Informatica}
+
+A von Neumann si deve l'algoritmo di ordinamento \textit{merge sort}, che porta l'efficienza del processo ad una velocità logaritmica. Fu responsabile anche dell'omonima architettura di von Neumann, impiegata nella quasi totalità dei computer moderni, consistente nel mantenere istruzioni e dati in un'unica parte del dispositivo, la memoria; oltre a ciò, insieme al matematico ed informatico Alan Turing, contribuì a gettare le prime basi della filosofia dell'intelligenza artificiale.
+
+
+\subsection{Matematica}
+
+Il più grande numero di innovazioni e scoperte di von Neumann sono, com'è forse naturale intuire, in ambito matematico. Nella teoria degli insiemi, il suo traguardo maggiore riguarda l'assiomatizzazione della stessa e della teoria dei numeri ordinali e cardinali, oltre che la formulazione rigorosa dei principi di definizione per mezzo dell'induzione transfinita. Porta il suo nome il paradosso di von Neumann, che riguarda le isometrie.
+Von Neumann è stato il primo matematico a definire per via assiomatica uno spazio astratto di Hilbert, oltre che altre varie disuguaglianze - come, ad esempio, la disuguaglianza di Cauchy-Schwarz - che prima di allora erano definite unicamente per gli spazi euclidei. Tali lavori vennero poi inclusi nella sua opera "\textit{Mathematical Foundations of Quantum Mechanics}" ("\textit{Fondamenti Matematici di Meccanica Quantistica}"), che fu tra le prime monografie sullo spazio hilbertiano. Definì, inoltre, diverse proprietà topologiche utilizzate ancora oggi. Per vent'anni von Neumann è stato considerato il maestro indiscusso in questa branca della matematica. 
+L'"algebra di von Neumann" include lo studio, introdotto dal matematico, degli anelli di operatori.
+Con il suo lavoro tra il 1935 ed il 1937 sulla teoria dei reticoli, von Neumann ha gettato le basi per la geometria proiettiva moderna.
+
+\subsection{Fisica}
+Nonostante non sia stato così prolifico in fisica come lo è stato in matematica, von Neumann ha comunque dato importanti contributi a campi come la fluidodinamica, con i suoi lavori in ottica bellica, o come la meccanica quantistica, ideando una logica quantistica e fornendo, per la prima volta, una struttura rigorosa alla materia, sottoforma degli assiomi di Dirac-von Neumann.
+
+
+
+\subsection{Economia}
+Von Neumann è il fondatore della branca della matematica della teoria dei giochi, dimostrando il suo teorema \textit{minimax}, che minimizza la perdita massima possibile nei casi di giochi a somma zero con due giocatori.
+
+
+\section{Conclusione}
+
+"\textit{Ammesso che l'influenza di un matematico si interpreti in senso abbastanza ampio da includere l'impatto che esso ha avuto su campi che vanno anche oltre tale scienza allora risulta probabile che John von Neumann possa essere stato il matematico più influente mai vissuto}": non solo ha contribuito a quasi tutte le branche della matematica moderna, creandone perfino di nuove, ma ha anche cambiato la storia dopo la Seconda Guerra Mondiale grazie al suo lavoro in ambito di architettura dei calcolatori ed alla sue consulenze tecniche alle organizzazioni militari e politiche degli Stati Uniti.
+
+
+\clearpage
+
+
+
+
+
+\clearpage
+
+\section{Fonti}
+
+{\large \textbf{Bibliografia}\par}
+\begin{itemize}
+    \item John Von Neumann, Miklós Rédei (curatore) \textit{Selected Letters}, American Mathematical Soc., anno 2005
+    \item Norman MacRae \textit{John Von Neumann: The Scientific Genius Who Pioneered the Modern Computer, Game Theory, Nuclear Deterrence, and Much More - 2nd edition}, American Mathematical Soc., anno 1999
+    \item Blair, Clay Jr. \textit{Passing of a Great Mind}, Life, pp. 89–104, 25 Febbraio 1957.
+    \item James Glimm, John Impagliazzo, Isadore Manuel Singer \textit{The Legacy of John von Neumann}, American Mathematical Soc., anno 1990
+    \item Steve J. Heims \textit{John von Neumann and Norbert Wiener, from Mathematics to the Technologies of Life and Death}, Cambridge, Massachusetts: MIT Press, anno 1980.
+\end{itemize}
+
+{\noindent \large \textbf{Sitografia}\par}
+\begin{itemize}
+    \item Google Scholar, \textit{John von Neumann},
+    \item[] \href{https://scholar.google.com.au/citations?user=6kEXBa0AAAAJ}{scholar.google.com.au/citations?user=6kEXBa0AAAAJ}
+    
+    \item Lemelson MIT, \textit{John von Neumann},
+    \item[] \href{https://lemelson.mit.edu/resources/john-von-neumann}
+    {lemelson.mit.edu/resources/john-von-neumann}
+    
+\end{itemize}
+
+\end{document}
